@@ -20,9 +20,8 @@
 <!-- PROJECT DESCRIPTION -->
 ## 🚀 project Presentation <a name="live-demo"></a>
 
-> Add a link to your deployed project.
 
-- [watch presentation]()
+- [watch presentation](https://drive.google.com/file/d/1SSDNb-W3mkIJpizo3mwL5Uure2jkQSd8/view?usp=sharing)
 
 # Location App <a name="about-project"></a>
 
