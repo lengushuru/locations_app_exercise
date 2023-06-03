@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{loc.name}}</h1>
+<div class="row">
+{% for location in loc.location_set.all %}
+<div class="card w-25 mb-3 me-auto col-md-6 ">
+  <div>
+    <h5 class="card-title">location:{{ location.name }}</h5>
+    <h5 class="card-text">Status:{{location.status}}</h5>
+    <a href="{% url 'delete_child' location.id %}" class="btn btn-danger">delete</a>
+  </div>
+</div>
+
+{% endfor %}
+</div>
+<a href="{% url 'delete_record' loc.id%}" class="btn btn-danger">delete parent</a>
+{% endblock%}

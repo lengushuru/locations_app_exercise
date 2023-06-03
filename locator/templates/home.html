@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Your template content goes here -->
+    <h1>welcome to locations</h1>
+    <div class="d-flex">
+        {% if user.is_authenticated%}
+        {%if parent_locs%}
+        {% for parent_loc in parent_locs %}
+
+        <div class="card m-3" style="width: 20rem;">
+          <div class="card-header d-flex">
+            <h4 class="me-auto">{{ parent_loc.name }}</h4> <a class="btn btn-primary " href="{% url 'location_record' parent_loc.id %}">show more</a>
+          </div>
+          {% for location in parent_loc.location_set.all %}
+          <ul class="pt-2">
+            <li>
+              <h5> {{ location.name }}</h5>
+            </li>
+          </ul>
+            {% endfor %}
+        </div>
+        {% endfor %}
+        {%endif%}
+        {% else %}
+        <h1>login</h1>
+        <form method="POST" action="{%url 'home' %}" class = 'col-md-6 offset-md-3 border border-secondary form_bootstrap'>
+            <form>
+                {% csrf_token %}
+                <div class="mb-3 form_bootstrap">
+                  <label for="username" class="form-label">Email address</label>
+                  <input type="text"  name="username" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" name="password" class="form-control" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">login</button>
+              </form>
+        </form>
+    </div>
+    {% endif %}
+{% endblock %}
+
+

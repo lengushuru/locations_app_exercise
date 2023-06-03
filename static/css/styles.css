@@ -1,0 +1,43 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.header {
+  color: #fff;
+}
+ul {
+  list-style: none;
+}
+
+.navbar {
+  background-color: rgb(54, 54, 55);
+  color: rgb(227, 79, 5);
+  height: 66px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul, .home_link {
+  display: flex;
+  gap: 12px;
+  font-size: large;
+  font-weight: 700;
+  margin-right: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.home_link {
+  margin-right: auto;
+  margin-left: 10px;
+}
+
+
+@media only screen and (max-width: 480px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
